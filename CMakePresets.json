@@ -1,0 +1,18 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "mypreset",
+            "displayName": "Clang 19.1.1 x86_64-w64-windows-gnu",
+            "description": "Using compilers: C = C:\\DOWNLOADS EXTERNAL\\mingw64\\bin\\clang.exe, CXX = C:\\DOWNLOADS EXTERNAL\\mingw64\\bin\\clang++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:/DOWNLOADS EXTERNAL/mingw64/bin/clang.exe",
+                "CMAKE_CXX_COMPILER": "C:/DOWNLOADS EXTERNAL/mingw64/bin/clang++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ]
+}
