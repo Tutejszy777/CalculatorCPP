@@ -12,5 +12,7 @@ int main(int, char**){
     expression = input1.result();
     std::cout << "Intermediate string: " << expression;
 
+    std::cin >> expression;
+
     return 0;
 }

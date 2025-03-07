@@ -5,62 +5,54 @@
 #include <string>
 #include <unordered_map>
 
-class Input
+
+Input::Input(std::string s) : expression(s)
 {
-public:
-    Input(std::string s) : expression(s)
+    std::cout << "\nEntered line: " << expression << "\n";
+    requestUnkown();
+}
+
+std::string Input::result()
+{
+    return expression;
+}
+
+
+void Input::prepareString(const std::unordered_map<char, double> &unknown)
+{
+    std::string a = "";
+    for (char c : expression)
     {
-        std::cout << "\nEntered line: " << expression << "\n";
-        requestUnkown();
-    }
-
-    std::string result()
-    {
-        return expression;
-    }
-
-private:
-    std::string expression;
-
-    void prepareString(const std::unordered_map<char, double> &unknown)
-    {
-        std::string a = "";
-
-        for (char c : expression)
+        if (std::isalpha(c))
         {
-            if (std::isalpha(c))
-            {
-                a = a + '(' + std::to_string(unknown.at(c)) + ')'; // quotes for 4x - case //test
-            }
-            else if (c == 32)
-            {
-                continue;
-            }
-            else
-            {
-                a += c;
-            }
+            a = a + '(' + std::to_string(unknown.at(c)) + ')'; // quotes for 4x - case //test
         }
-
-        expression = a;
-    }
-
-    void requestUnkown()
-    {
-        std::unordered_map<char, double> map;
-        std::cout << "NOTICE: non-digit value will be considered as 0\n";
-
-        for (char c : expression)
+        else if (c == 32)
         {
-            if (std::isalpha(c) && map.find(c) == map.end())
-            {
-                double a;
-                std::cout << "value of " << c << std::endl;
-                std::cin >> a; // prevent user to enter non-digit
-                map[c] = a;
-            }
+            continue;
         }
-
-        prepareString(map);
+        else
+        {
+            a += c;
+        }
     }
-};
+    expression = a;
+}
+
+
+void Input::requestUnkown()
+{
+    std::unordered_map<char, double> map;
+    std::cout << "NOTICE: non-digit value will be considered as 0\n";
+    for (char c : expression)
+    {
+        if (std::isalpha(c) && map.find(c) == map.end())
+        {
+            double a;
+            std::cout << "value of " << c << std::endl;
+            std::cin >> a; // prevent user to enter non-digit
+            map[c] = a;
+        }
+    }
+    prepareString(map);
+}
