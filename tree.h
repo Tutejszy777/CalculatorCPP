@@ -18,7 +18,26 @@ public:
     double Evaluate(Node* node = NULL) const;
     std::string Expression() const;
 
+    static double Add(double x, double y) {return x + y;}
+    static double Substract(double x, double y) {return x - y;}
+    static double Multiply(double x, double y) {return x * y;}
+    static double Divide(double x, double y) {return x / y;}
+
+
+    //function pointer
+    typedef double (*OperatorFunction)(double, double);
+    // | inherits
+    struct OperatorInfo {
+        int Priority;
+        OperatorFunction Func;
+    };
+    // | inherits
+    typedef std::map<std::string, OperatorInfo> operator_map;
+    void FromString(const std::string& str);
+
 private:
     Node *root;
     std::string expression;
+
+    static operator_map operators; // all trees share the same map
 };
