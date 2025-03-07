@@ -28,6 +28,7 @@ public:
     typedef double (*OperatorFunction)(double, double);
     // | inherits
     struct OperatorInfo {
+        OperatorInfo(int i, OperatorFunction f) : Priority(i), Func(f) {}
         int Priority;
         OperatorFunction Func;
     };

@@ -18,6 +18,7 @@ std::string Input::result()
 }
 
 
+// string containing only digits and NO-WHITESPACES
 void Input::prepareString(const std::unordered_map<char, double> &unknown)
 {
     std::string a = "";
@@ -40,6 +41,7 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
 }
 
 
+// fill the map with inserted values
 void Input::requestUnkown()
 {
     std::unordered_map<char, double> map;
