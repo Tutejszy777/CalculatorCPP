@@ -1,12 +1,16 @@
 #include <iostream>
-#include "blazor.h"
+#include "input.h"
 
 int main(int, char**){
     
-    Value a(12.5);
-    int c = 0;
+    std::string expression;
+    std::cout << "Enter a line of simple arithmetic or algebra expression: ";
+    std::getline(std::cin, expression);
 
-    a.print();
+    Input input1(expression);
 
-    std::cin >> c;
+    expression = input1.result();
+    std::cout << "Intermediate string: " << expression;
+
+    return 0;
 }

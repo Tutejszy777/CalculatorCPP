@@ -1,3 +1,4 @@
+#include "input.h"
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -63,18 +64,3 @@ private:
         prepareString(map);
     }
 };
-
-int main()
-{
-
-    std::string expression;
-    std::cout << "Enter a line of simple arithmetic or algebra expression: ";
-    std::getline(std::cin, expression);
-
-    Input input1(expression);
-
-    expression = input1.result();
-    std::cout << "Intermediate string: " << expression;
-
-    return 0;
-}
