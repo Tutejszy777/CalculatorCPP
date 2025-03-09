@@ -5,14 +5,15 @@
 #include <string>
 #include <unordered_map>
 
-
-Input::Input(std::string s) : expression(s) //result
+//result
+Input::Input(std::string s) : expression(s)
 {
     std::cout << "Entered line: " << expression << "\n";
     requestUnkown();
 }
 
-std::string Input::result()//retrieve expression
+//retrieve expression
+std::string Input::result()
 {
     return expression;
 }
