@@ -28,16 +28,23 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
         {
             a = a + '(' + std::to_string(unknown.at(c)) + ')'; // quotes for 4x - case //test
         }
-        else if (c == 32)
-        {
-            continue;
-        }
         else
         {
             a += c;
         }
     }
     expression = a;
+
+    int i = 0;
+    while(i < expression.length()) 
+    {
+        if(expression[i] == '(' || expression[i] == ')' || expression[i] == '*' || expression[i] == '/' || expression[i] == '+' || expression[i] == '-' )
+        {
+            AddWhiteSpace(i + 1, i + 1);
+            AddWhiteSpace(i - 1, i);
+        }
+        i++;
+    }
 }
 
 
@@ -57,4 +64,11 @@ void Input::requestUnkown()
         }
     }
     prepareString(map);
+}
+
+void Input::AddWhiteSpace(int check, int insert){
+    if(expression[check] != ' ' && check >= 0 && insert < expression.length())
+    {
+        expression.insert(insert, 1, ' ');
+    }
 }

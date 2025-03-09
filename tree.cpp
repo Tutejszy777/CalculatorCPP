@@ -30,25 +30,7 @@ std::string ExpressionTree::Expression() const {
     return expression;
 }
 
-void AddWhiteSpace(int check, int insert, std::string& underEffect){
-    if( check >= 0 && insert < underEffect.length() && underEffect[check] != ' ')
-    {
-        underEffect.insert(insert, 1, ' ');
-    }
-}
-
 void ExpressionTree::FromString(const std::string& strIn){
-    std::string copy = strIn;
-    for(char character : copy)
-    {
-        std::string temp;
-        temp.push_back(character); //duoble check if passing char is valid method(to simplify)
-        if(operators.find(temp) != operators.end())// if element present
-        {
-            AddWhiteSpace(i+1, i+1, copy);
-            AddWhiteSpace(i-1, i, copy);
-        }
-    }
 
     std::stack<std::string> operatorStack;
     operatorStack.push("#");
