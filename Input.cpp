@@ -26,7 +26,7 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
     {
         if (std::isalpha(c))
         {
-            a = a + '(' + std::to_string(unknown.at(c)) + ')'; // quotes for 4x - case //test
+            a = a + std::to_string(unknown.at(c)); // quotes for 4x - case //test
         }
         else
         {
