@@ -23,7 +23,18 @@ ExpressionTree::ExpressionTree(const std::string& str) : expression(str) {
 ExpressionTree::~ExpressionTree() {}
 
 double ExpressionTree::Evaluate(Node* node = NULL) const {
-    return 0;
+    if (node == NULL) node = root;
+
+    operator_map::iterator it = operators.find(node->value); 
+    if(it != operators.end()){
+        return (it->second.Func)(Evaluate(node->left), Evaluate(node->right));
+    }
+    
+    std::istringstream ss(node->value);
+    double val;
+    ss >> val;
+
+    return val;
 }
 
 std::string ExpressionTree::Expression() const {
@@ -47,10 +58,9 @@ void ExpressionTree::FromString(const std::string& strIn){
 
     std::string copy = strIn;
 
+    std::stack<Node*> nodeStack;
     std::stack<std::string> operatorStack;
     operatorStack.push("#");
-
-    std::stack<Node*> nodeStack;
 
     std::istringstream ss(copy);
     while(!ss.eof())
@@ -63,12 +73,29 @@ void ExpressionTree::FromString(const std::string& strIn){
             if(temp == "("){
                 operatorStack.push(temp);
             }
-            else if(s == ")") 
-            {
-                while(operator){
+            else if(temp == ")") {
+                while(operatorStack.top() != "("){
                     PopOperator(operatorStack, nodeStack);
                 }
+                operatorStack.pop();
+            }
+            else if(operators[operatorStack.top()].Priority >= operators[temp].Priority){
+                PopOperator(operatorStack, nodeStack);
+                operatorStack.push(temp);
+            }
+            else {
+                operatorStack.push(temp);
             }
         }
+        else {
+            Node *n = new Node(temp);
+            nodeStack.push(n);
+        }
     }
+
+    while(operatorStack.top() != "#"){
+        PopOperator(operatorStack, nodeStack);
+    }
+
+    root = nodeStack.top();
 }
