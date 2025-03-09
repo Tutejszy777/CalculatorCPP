@@ -6,17 +6,16 @@
 #include <unordered_map>
 
 
-Input::Input(std::string s) : expression(s)
+Input::Input(std::string s) : expression(s) //result
 {
     std::cout << "Entered line: " << expression << "\n";
     requestUnkown();
 }
 
-std::string Input::result()
+std::string Input::result()//retrieve expression
 {
     return expression;
 }
-
 
 // string containing only digits and NO-WHITESPACES
 void Input::prepareString(const std::unordered_map<char, double> &unknown)
@@ -47,7 +46,6 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
     }
 }
 
-
 // fill the map with inserted values
 void Input::requestUnkown()
 {
@@ -72,3 +70,4 @@ void Input::AddWhiteSpace(int check, int insert){
         expression.insert(insert, 1, ' ');
     }
 }
+
