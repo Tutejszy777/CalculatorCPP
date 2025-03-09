@@ -30,6 +30,26 @@ std::string ExpressionTree::Expression() const {
     return expression;
 }
 
+void AddWhiteSpace(int check, int insert, std::string& underEffect){
+    if( check >= 0 && insert < underEffect.length() && underEffect[check] != ' ')
+    {
+        underEffect.insert(insert, 1, ' ');
+    }
+}
+
+void PopOperator(std::stack<strng> &operatorStack, std:stack<Node*> &nodeStack){
+    ExpressionTree::Node *n = new ExpressionTree::Node(operatorStack.top())
+    operatorStack.pop();
+
+    n->Right = nodeStack.top();
+    nodeStack.pop();
+
+    n->Left = nodeStack.top();
+    nodeStack.pop();
+
+    nodeStack.push(n);
+}
+
 void ExpressionTree::FromString(const std::string& strIn){
 
     std::stack<std::string> operatorStack;
@@ -47,6 +67,12 @@ void ExpressionTree::FromString(const std::string& strIn){
         {
             if(temp == "("){
                 operatorStack.push(temp);
+            }
+            else if(s == ")") 
+            {
+                while(operator){
+                    PopOperator(operatorStack, nodeStack);
+                }
             }
         }
     }
