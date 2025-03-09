@@ -8,7 +8,7 @@
 
 Input::Input(std::string s) : expression(s)
 {
-    std::cout << "\nEntered line: " << expression << "\n";
+    std::cout << "Entered line: " << expression << "\n";
     requestUnkown();
 }
 
@@ -52,13 +52,13 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
 void Input::requestUnkown()
 {
     std::unordered_map<char, double> map;
-    std::cout << "NOTICE: non-digit value will be considered as 0\n";
+    std::cout << "\nNOTICE: non-digit value will be considered as 0\n";
     for (char c : expression)
     {
         if (std::isalpha(c) && map.find(c) == map.end())
         {
             double a;
-            std::cout << "value of " << c << std::endl;
+            std::cout << "Enter value of " << c << " " << std::endl;
             std::cin >> a; // prevent user to enter non-digit
             map[c] = a;
         }

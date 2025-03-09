@@ -1,5 +1,7 @@
 #include <iostream>
 #include "input.h"
+#include "tree.h"
+
 
 int main(int, char**){
     
@@ -8,11 +10,12 @@ int main(int, char**){
     std::getline(std::cin, expression);
 
     Input input1(expression);
-
     expression = input1.result();
-    std::cout << "Intermediate string: " << expression;
+    //std::cout << "Intermediate string: " << expression;
 
-    std::cin >> expression;
+    ExpressionTree ex(expression);
+    std::cout << "\n" << ex.Expression() << " = " << ex.Evaluate() << std::endl;
 
+    system("pause");
     return 0;
 }

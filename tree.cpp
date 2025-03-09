@@ -5,6 +5,30 @@
 #include <map>
 #include <sstream>
 
+void DeleteTree(ExpressionTree::Node *node) {
+    if(node == NULL) return;
+
+    DeleteTree(node->left);
+    DeleteTree(node->right);
+
+    delete node;
+}
+
+
+void PopOperator(std::stack<std::string> &operatorStack, std::stack<ExpressionTree::Node*> &nodeStack){
+    ExpressionTree::Node *n = new ExpressionTree::Node(operatorStack.top());
+    operatorStack.pop();
+
+    n->right = nodeStack.top();
+    nodeStack.pop();
+
+    n->left = nodeStack.top();
+    nodeStack.pop();
+
+    nodeStack.push(n);
+}
+
+
 ExpressionTree::operator_map ExpressionTree::operators; //specific isntance to use
 
 ExpressionTree::ExpressionTree(const std::string& str) : expression(str) {
@@ -18,11 +42,14 @@ ExpressionTree::ExpressionTree(const std::string& str) : expression(str) {
         operators["#"] = ExpressionTree::OperatorInfo(-1, NULL); //special char for stack
     }//thread unsafe
 
-
+    FromString(str);
 }
-ExpressionTree::~ExpressionTree() {}
+ExpressionTree::~ExpressionTree() {
+    DeleteTree(root);
+    root == NULL;
+}
 
-double ExpressionTree::Evaluate(Node* node = NULL) const {
+double ExpressionTree::Evaluate(Node* node) const {
     if (node == NULL) node = root;
 
     operator_map::iterator it = operators.find(node->value); 
@@ -41,18 +68,6 @@ std::string ExpressionTree::Expression() const {
     return expression;
 }
 
-void PopOperator(std::stack<std::string> &operatorStack, std::stack<ExpressionTree::Node*> &nodeStack){
-    ExpressionTree::Node *n = new ExpressionTree::Node(operatorStack.top());
-    operatorStack.pop();
-
-    n->right = nodeStack.top();
-    nodeStack.pop();
-
-    n->left = nodeStack.top();
-    nodeStack.pop();
-
-    nodeStack.push(n);
-}
 
 void ExpressionTree::FromString(const std::string& strIn){
 
