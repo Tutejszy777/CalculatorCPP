@@ -11,10 +11,9 @@ int main(int, char**){
 
     Input input1(expression);
     expression = input1.result();
-    //std::cout << "Intermediate string: " << expression;
 
     ExpressionTree ex(expression);
-    std::cout << "\n" << ex.Expression() << " = " << ex.Evaluate() << std::endl;
+    std::cout << "\n\n" << ex.Expression() << " = " << ex.Evaluate() << "\n\n" << std::endl;
 
     system("pause");
     return 0;
