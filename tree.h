@@ -8,19 +8,22 @@ class ExpressionTree {
 public:
     struct Node {
         Node(std::string v) : value(v), left(NULL), right(NULL) {}
+        
         std::string value;
         Node *left, *right; 
     };
 
+
     ExpressionTree(const std::string& str); //constructor
     ~ExpressionTree(); //deconstructor
+
 
     void FromString(const std::string& str); // create a tree
     double Evaluate(Node* node = NULL) const; //solve the tree
     std::string Expression() const; // get passed expression
 
 
-    // operations
+    // operations (Static don't need object to be called && safer since don't access only static members)
     static double Add(double x, double y) {return x + y;}
     static double Substract(double x, double y) {return x - y;}
     static double Multiply(double x, double y) {return x * y;}
