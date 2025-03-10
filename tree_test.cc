@@ -2,8 +2,8 @@
 #include "tree.h"
 
 
-// checks everything
-TEST(TreeTest, EvaluationCheck) {
+// Check of complex calculations from proper string
+TEST(TreeTest, ComplexEvaluationCheck) {
 
   std::string INPUT = "( ( ( 1.000 + ( 2 * 9 ) ) - ( ( 9 / 3 ) * ( 2 - 1 ) ) ) - 32.4 )";
 
@@ -16,8 +16,9 @@ TEST(TreeTest, EvaluationCheck) {
 
 }
 
-TEST(TreeTest, EvaluationCheck2) {
 
+// Check of calculations from proper string
+TEST(TreeTest, EvaluationCheck) {
   std::string INPUT = "( 4 + ( 5 * 2 ) )";
 
   ExpressionTree ex(INPUT);

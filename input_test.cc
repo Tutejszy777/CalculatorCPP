@@ -9,7 +9,7 @@ TEST(InputTest, ExpressionConversion) {
   std::string EXPECT1 = "( ( ( 1.000 + ( 2 * 9 ) ) - ( ( 8 / 3 ) * ( 2 - 1 ) ) ) - 32.4 )";
 
   Input input1(INPUT1);
-  std::string expression = input1.result();
+  std::string expression = input1.result(); // get prepared string
 
   // Expect equality.
   EXPECT_EQ(expression, EXPECT1) << "\n\t NOT good\n";
@@ -24,7 +24,7 @@ TEST(InputTest, ReadFunctionCheck) {
 
   std::cout << "Enter 1 \n";
   Input input1(INPUT1);
-  std::string expression = input1.result();
+  std::string expression = input1.result(); // get prepared string
 
   // Expect equality.
   EXPECT_EQ(expression, EXPECT1) << "\n\t NOT good\n";
