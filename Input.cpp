@@ -6,12 +6,22 @@
 #include <unordered_map>
 #include <stack>
 
-//result
+
+//helper function to add parentheses
+int precedence(char check) {
+    if (check == '+' || check == '-') return 1;
+    if (check == '*' || check == '/') return 2;
+    return 0;
+}
+
+
+//assigns the value and makes all calculations
 Input::Input(std::string s) : expression(s)
 {
     requestUnkown();
     addParentheses();
 }
+
 
 //retrieve expression
 std::string Input::result()
@@ -19,15 +29,16 @@ std::string Input::result()
     return expression;
 }
 
-// string containing only digits and NO-WHITESPACES
-void Input::prepareString(const std::unordered_map<char, double> &unknown)
+
+// string containing only digits
+void Input::replaceUnkown(const std::unordered_map<char, double> &unknown)
 {
     std::string a = "";
     for (char c : expression)
     {
         if (std::isalpha(c))
         {
-            a = a + std::to_string(unknown.at(c)); // quotes for 4x - case //test
+            a = a + std::to_string(unknown.at(c)); 
         }
         else
         {
@@ -51,7 +62,7 @@ void Input::requestUnkown()
             map[c] = a;
         }
     }
-    prepareString(map);
+    replaceUnkown(map);
 }
 
 void Input::AddWhiteSpace(int check, int insert){
@@ -61,11 +72,6 @@ void Input::AddWhiteSpace(int check, int insert){
     }
 }
 
-int precedence(char op) {
-    if (op == '+' || op == '-') return 1;
-    if (op == '*' || op == '/') return 2;
-    return 0;
-}
 
 void Input::addParentheses() {
     std::stack<std::string> values;
@@ -110,10 +116,12 @@ void Input::addParentheses() {
         values.push("(" + left + " " + op + " " + right + ")");
     }
 
-
     expression = values.top();
 
-    //whitespaces
+    spaceBetweenOperators();
+}
+
+void Input::spaceBetweenOperators(){
     int i = 0;
     while(i < expression.length()) 
     {

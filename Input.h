@@ -16,8 +16,9 @@ public:
 private:
     std::string expression; // string to work with
 
-    void prepareString(const std::unordered_map<char, double> &unknown); // string containing only digits and NO-WHITESPACES
+    void replaceUnkown(const std::unordered_map<char, double> &unknown); // string containing only digits
     void requestUnkown(); // fill the map with inserted values
+    void addParentheses(); //adds parentheses for constructing tree
+    void spaceBetweenOperators(); // adds spaces since I use stirng stream
     void AddWhiteSpace(int check, int isert);
-    void addParentheses();
 };
