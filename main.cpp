@@ -42,7 +42,7 @@ bool validationOfInput(std::string a)
             }
             else return false;
         }
-        else std::cout << "unhandled case appeared\n\n";
+        else return false;
     }
 
     if(!par.empty()) return false;
