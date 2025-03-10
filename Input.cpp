@@ -114,6 +114,7 @@ void Input::addParentheses() {
 
     expression = values.top();
 
+    //whitespaces
     int i = 0;
     while(i < expression.length()) 
     {
