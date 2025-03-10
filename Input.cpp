@@ -15,7 +15,7 @@ int precedence(char check) {
 }
 
 
-//assigns the value and makes all calculations
+// assigns the value and makes all calculations. The string is ready for creating the tree.
 Input::Input(std::string s) : expression(s)
 {
     requestUnkown();
@@ -23,14 +23,12 @@ Input::Input(std::string s) : expression(s)
 }
 
 
-//retrieve expression
 std::string Input::result()
 {
     return expression;
 }
 
 
-// string containing only digits
 void Input::replaceUnkown(const std::unordered_map<char, double> &unknown)
 {
     std::string a = "";
@@ -48,7 +46,7 @@ void Input::replaceUnkown(const std::unordered_map<char, double> &unknown)
     expression = a;
 }
 
-// fill the map with inserted values
+
 void Input::requestUnkown()
 {
     std::unordered_map<char, double> map;
@@ -65,6 +63,7 @@ void Input::requestUnkown()
     replaceUnkown(map);
 }
 
+
 void Input::AddWhiteSpace(int check, int insert){
     if(expression[check] != ' ' && check >= 0 && insert < expression.length())
     {
@@ -73,46 +72,75 @@ void Input::AddWhiteSpace(int check, int insert){
 }
 
 
-void Input::addParentheses() {
+void Input::addParentheses(){
     std::stack<std::string> values;
-    std::stack<char> ops;
+    std::stack<char> operators;
 
-    for (size_t i = 0; i < expression.length(); i++) {
-        if (isspace(expression[i])) continue;
+    for (int i = 0; i < expression.length(); i++) {
+        if (isspace(expression[i])) continue; // skip space
 
-        if (isdigit(expression[i])) {
+        if (isdigit(expression[i])) //add a value to a value stack
+        {
             std::string num;
-            while (i < expression.length() && (isdigit(expression[i]) || expression[i] == '.')) {
+            while (i < expression.length() && (isdigit(expression[i]) || expression[i] == '.')) 
+            {
                 num += expression[i];
                 i++;
             }
             i--;
             values.push(num);
-        } else if (expression[i] == '(') {
-            ops.push(expression[i]);
-        } else if (expression[i] == ')') {
-            while (!ops.empty() && ops.top() != '(') {
-                std::string right = values.top(); values.pop();
-                std::string left = values.top(); values.pop();
-                char op = ops.top(); ops.pop();
+        } 
+        else if (expression[i] == '(')  // add to operator stack
+        {
+            operators.push(expression[i]);
+        } 
+        else if (expression[i] == ')') // construct an opearation and put on stack
+        {
+            while (!operators.empty() && operators.top() != '(') 
+            {
+                std::string right = values.top(); 
+                values.pop();
+
+                std::string left = values.top(); 
+                values.pop();
+
+                char op = operators.top(); 
+                operators.pop();
+
                 values.push("(" + left + " " + op + " " + right + ")");
             }
-            ops.pop();
-        } else {
-            while (!ops.empty() && precedence(ops.top()) >= precedence(expression[i])) {
-                std::string right = values.top(); values.pop();
-                std::string left = values.top(); values.pop();
-                char op = ops.top(); ops.pop();
+            operators.pop(); // delete ( from stack
+        } 
+        else // add an operator && check precedence
+        {
+            while (!operators.empty() && precedence(operators.top()) >= precedence(expression[i])) 
+            {
+                std::string right = values.top(); 
+                values.pop();
+
+                std::string left = values.top(); 
+                values.pop();
+
+                char op = operators.top(); 
+                operators.pop();
+
                 values.push("(" + left + " " + op + " " + right + ")");
             }
-            ops.push(expression[i]);
+            operators.push(expression[i]);
         }
     }
 
-    while (!ops.empty()) {
-        std::string right = values.top(); values.pop();
-        std::string left = values.top(); values.pop();
-        char op = ops.top(); ops.pop();
+    while (!operators.empty()) // construct remaining
+    {
+        std::string right = values.top(); 
+        values.pop();
+
+        std::string left = values.top(); 
+        values.pop();
+
+        char op = operators.top(); 
+        operators.pop();
+
         values.push("(" + left + " " + op + " " + right + ")");
     }
 
@@ -120,6 +148,7 @@ void Input::addParentheses() {
 
     spaceBetweenOperators();
 }
+
 
 void Input::spaceBetweenOperators(){
     int i = 0;

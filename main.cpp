@@ -9,13 +9,14 @@ int main(int, char**){
     std::cout << "Enter a line of simple arithmetic or algebra expression: ";
 
     std::string expression;
-    std::getline(std::cin, expression);
+    //(VALIDATION NEEDED but it wasn't a requirment)
+    std::getline(std::cin, expression); // user enters the string 
 
-    Input input1(expression);
+    Input input1(expression); // passes the string to make into proper format for building a tree
     expression = input1.result();
 
-    ExpressionTree ex(expression);
-    std::cout << "\n\n" << ex.Expression() << " = " << ex.Evaluate() << "\n\n" << std::endl;
+    ExpressionTree ex(expression); // building a tree
+    std::cout << "\n\n" << ex.Expression() << " = " << ex.Evaluate() << "\n\n" << std::endl; // evaluating
 
     system("pause");
     return 0;
