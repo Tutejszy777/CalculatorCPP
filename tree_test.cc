@@ -10,7 +10,7 @@ TEST(TreeTest, ComplexEvaluationCheck) {
   ExpressionTree ex(INPUT);
   bool check = true;
 
-  if(ex.Evaluate() != -16.4) check = false;
+  if(ex.Evaluate() != -16.4) check = false; // check are the calculations correct
 
   EXPECT_TRUE(check);
 
@@ -24,7 +24,7 @@ TEST(TreeTest, EvaluationCheck) {
   ExpressionTree ex(INPUT);
   bool check = true;
 
-  if(ex.Evaluate() != 14) check = false;
+  if(ex.Evaluate() != 14) check = false; // check are the calculations correct
 
   EXPECT_TRUE(check);
 
