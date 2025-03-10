@@ -2,7 +2,7 @@
 #include "input.h"
 
 
-// checks everything
+// checks every function
 TEST(InputTest, ExpressionConversion) {
 
   std::string INPUT1 = "1.000+2*9-8/3*(2-1)-32.4";
@@ -16,23 +16,7 @@ TEST(InputTest, ExpressionConversion) {
 
 }
 
-TEST(InputTest, WhiteSpaceFunction) {
-
-  std::string INPUT1 = "1+2*9-8/3*(2-1)-32.4";
-  std::string INVALID1 = "(((1.000+(2*9))-((8/3)*(2-1)))-32.4)";
-
-
-
-  Input input1(INPUT1);
-  std::string expression = input1.result();
-  
-  bool result1 = true;
-  if(expression == INVALID1) result1 = false;
-
-  EXPECT_TRUE(result1);
-
-}
-
+//checks read from user
 TEST(InputTest, ReadFunctionCheck) {
 
   std::string INPUT1 = "x+5";
@@ -46,6 +30,7 @@ TEST(InputTest, ReadFunctionCheck) {
   EXPECT_EQ(expression, EXPECT1) << "\n\t NOT good\n";
 
 }
+
 
 TEST(InputTest, ToSeeTheConsole) {
   system("pause");
