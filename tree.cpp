@@ -5,6 +5,10 @@
 #include <map>
 #include <sstream>
 
+
+ExpressionTree::operator_map ExpressionTree::operators; //specific instance to use
+
+// helper function for deconstructor
 void DeleteTree(ExpressionTree::Node *node) {
     if(node == NULL) return;
 
@@ -15,6 +19,7 @@ void DeleteTree(ExpressionTree::Node *node) {
 }
 
 
+// create new OPERATOR Node
 void PopOperator(std::stack<std::string> &operatorStack, std::stack<ExpressionTree::Node*> &nodeStack){
     ExpressionTree::Node *n = new ExpressionTree::Node(operatorStack.top());
     operatorStack.pop();
@@ -29,9 +34,9 @@ void PopOperator(std::stack<std::string> &operatorStack, std::stack<ExpressionTr
 }
 
 
-ExpressionTree::operator_map ExpressionTree::operators; //specific isntance to use
-
+// constructor
 ExpressionTree::ExpressionTree(const std::string& str) : expression(str) {
+
     if(operators.empty()){
         operators["+"] = ExpressionTree::OperatorInfo(0, ExpressionTree::Add);
         operators["-"] = ExpressionTree::OperatorInfo(0, ExpressionTree::Substract);
@@ -44,11 +49,16 @@ ExpressionTree::ExpressionTree(const std::string& str) : expression(str) {
 
     FromString(str);
 }
+
+
+// deconstructor
 ExpressionTree::~ExpressionTree() {
     DeleteTree(root);
     root == NULL;
 }
 
+
+// solve the tree
 double ExpressionTree::Evaluate(Node* node) const {
     if (node == NULL) node = root;
 
@@ -64,9 +74,12 @@ double ExpressionTree::Evaluate(Node* node) const {
     return val;
 }
 
+
+// retrieve passed expression
 std::string ExpressionTree::Expression() const {
     return expression;
 }
+
 
 //creates tree
 void ExpressionTree::FromString(const std::string& strIn){
