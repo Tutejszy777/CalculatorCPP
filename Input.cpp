@@ -64,21 +64,13 @@ void Input::requestUnkown()
 }
 
 
-void Input::AddWhiteSpace(int check, int insert){
-    if(expression[check] != ' ' && check >= 0 && insert < expression.length())
-    {
-        expression.insert(insert, 1, ' ');
-    }
-}
-
-
 void Input::addParentheses(){
     std::stack<std::string> values;
     std::stack<char> operators;
-
+    
     for (int i = 0; i < expression.length(); i++) {
         if (isspace(expression[i])) continue; // skip space
-
+        
         if (isdigit(expression[i])) //add a value to a value stack
         {
             std::string num;
@@ -100,13 +92,13 @@ void Input::addParentheses(){
             {
                 std::string right = values.top(); 
                 values.pop();
-
+                
                 std::string left = values.top(); 
                 values.pop();
-
+                
                 char op = operators.top(); 
                 operators.pop();
-
+                
                 values.push("(" + left + " " + op + " " + right + ")");
             }
             operators.pop(); // delete ( from stack
@@ -117,35 +109,35 @@ void Input::addParentheses(){
             {
                 std::string right = values.top(); 
                 values.pop();
-
+                
                 std::string left = values.top(); 
                 values.pop();
-
+                
                 char op = operators.top(); 
                 operators.pop();
-
+                
                 values.push("(" + left + " " + op + " " + right + ")");
             }
             operators.push(expression[i]);
         }
     }
-
+    
     while (!operators.empty()) // construct remaining
     {
         std::string right = values.top(); 
         values.pop();
-
+        
         std::string left = values.top(); 
         values.pop();
-
+        
         char op = operators.top(); 
         operators.pop();
-
+        
         values.push("(" + left + " " + op + " " + right + ")");
     }
-
+    
     expression = values.top();
-
+    
     spaceBetweenOperators();
 }
 
@@ -163,3 +155,10 @@ void Input::spaceBetweenOperators(){
     }
 }
 
+
+void Input::AddWhiteSpace(int check, int insert){
+if(expression[check] != ' ' && check >= 0 && insert < expression.length())
+{
+    expression.insert(insert, 1, ' ');
+    }
+}
