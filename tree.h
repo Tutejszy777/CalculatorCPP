@@ -17,6 +17,7 @@ public:
 
     double Evaluate(Node* node = NULL) const;
     std::string Expression() const;
+    void FromString(const std::string& str);
 
     static double Add(double x, double y) {return x + y;}
     static double Substract(double x, double y) {return x - y;}
@@ -35,7 +36,6 @@ public:
     };
     // | inherits
     typedef std::map<std::string, OperatorInfo> operator_map;
-    void FromString(const std::string& str);
 
 private:
     Node *root;

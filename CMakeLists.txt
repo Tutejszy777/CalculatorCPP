@@ -23,7 +23,10 @@ add_executable(
   input_test
   input_test.cc
   input.cpp
+  tree_test.cc
+  tree.cpp
 )
+
 target_link_libraries(
   input_test
   GTest::gtest_main

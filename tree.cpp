@@ -68,7 +68,7 @@ std::string ExpressionTree::Expression() const {
     return expression;
 }
 
-
+//creates tree
 void ExpressionTree::FromString(const std::string& strIn){
 
     std::string copy = strIn;
