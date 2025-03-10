@@ -41,7 +41,6 @@ void Input::prepareString(const std::unordered_map<char, double> &unknown)
 void Input::requestUnkown()
 {
     std::unordered_map<char, double> map;
-    std::cout << "\nNOTICE: non-digit value will be considered as 0\n";
     for (char c : expression)
     {
         if (std::isalpha(c) && map.find(c) == map.end())

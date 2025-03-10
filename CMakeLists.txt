@@ -20,14 +20,14 @@ include(CTest)
 enable_testing()
 
 add_executable(
-  hello_test
-  hello_test.cc
+  input_test
+  input_test.cc
   input.cpp
 )
 target_link_libraries(
-  hello_test
+  input_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(input_test)

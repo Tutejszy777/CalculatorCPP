@@ -9,6 +9,7 @@ int main(int, char**){
     std::cout << "Enter a line of simple arithmetic or algebra expression: ";
     std::getline(std::cin, expression);
 
+    std::cout << "\nNOTICE: non-digit value will be considered as 0\n"; //istruction about 4x 
     Input input1(expression);
     expression = input1.result();
 
