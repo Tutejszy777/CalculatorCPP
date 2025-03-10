@@ -58,30 +58,7 @@ ExpressionTree::~ExpressionTree() {
 }
 
 
-// solve the tree
-double ExpressionTree::Evaluate(Node* node) const {
-    if (node == NULL) node = root;
-
-    operator_map::iterator it = operators.find(node->value); 
-    if(it != operators.end()){
-        return (it->second.Func)(Evaluate(node->left), Evaluate(node->right));
-    }
-    
-    std::istringstream ss(node->value);
-    double val;
-    ss >> val;
-
-    return val;
-}
-
-
-// retrieve passed expression
-std::string ExpressionTree::Expression() const {
-    return expression;
-}
-
-
-//creates tree
+// creates tree
 void ExpressionTree::FromString(const std::string& strIn){
 
     std::string copy = strIn;
@@ -127,3 +104,27 @@ void ExpressionTree::FromString(const std::string& strIn){
 
     root = nodeStack.top();
 }
+
+
+// solve the tree
+double ExpressionTree::Evaluate(Node* node) const {
+    if (node == NULL) node = root;
+
+    operator_map::iterator it = operators.find(node->value); 
+    if(it != operators.end()){
+        return (it->second.Func)(Evaluate(node->left), Evaluate(node->right));
+    }
+    
+    std::istringstream ss(node->value);
+    double val;
+    ss >> val;
+
+    return val;
+}
+
+
+// retrieve passed expression
+std::string ExpressionTree::Expression() const {
+    return expression;
+}
+
