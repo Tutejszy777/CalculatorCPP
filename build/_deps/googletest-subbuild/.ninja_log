@@ -1,0 +1,21 @@
+# ninja log v6
+2	72	7633950782538460	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e11d09d1076dd720
+2	72	7633950782538460	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e11d09d1076dd720
+73	1216	7633950793967401	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	6e7addac3f0cee55
+73	1216	7633950793967401	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	6e7addac3f0cee55
+1216	1289	7633950794697420	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	f0d2b019358ed2d5
+1216	1289	7633950794697420	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	f0d2b019358ed2d5
+1289	1359	7633950795397403	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	811d373fdb3e9527
+1289	1359	7633950795397403	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	811d373fdb3e9527
+1359	1427	7633950796077411	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	7dc9caa2df3d1938
+1359	1427	7633950796077411	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	7dc9caa2df3d1938
+1427	1501	7633950796817411	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	50765a6e1bfc4c5f
+1427	1501	7633950796817411	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	50765a6e1bfc4c5f
+1501	1570	7633950797507407	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	85e2d4d55b78e2a1
+1501	1570	7633950797507407	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	85e2d4d55b78e2a1
+1570	1637	7633950798177406	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	6cd3d53e687191e2
+1570	1637	7633950798177406	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	6cd3d53e687191e2
+1637	1732	7633950799127409	CMakeFiles/googletest-populate-complete	1eb947b20d7d6c22
+1637	1732	7633950799127409	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	1eb947b20d7d6c22
+1637	1732	7633950799127409	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	1eb947b20d7d6c22
+1637	1732	7633950799127409	C:/Users/Murav/Documents/GitHub/Calculator/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	1eb947b20d7d6c22

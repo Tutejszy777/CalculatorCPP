@@ -1,0 +1,3 @@
+C:/Users/Murav/Documents/GitHub/Calculator/out/build/mypreset/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+C:/Users/Murav/Documents/GitHub/Calculator/out/build/mypreset/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/Murav/Documents/GitHub/Calculator/out/build/mypreset/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

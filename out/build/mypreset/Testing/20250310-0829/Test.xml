@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20250310-0829-Experimental"
+	Name="DESKTOP-OIQC3FI"
+	Generator="ctest-3.30.4"
+	CompilerName="C:/DOWNLOADS EXTERNAL/mingw64/bin/clang++.exe"
+	CompilerVersion="19.1.1"
+	OSName="Windows"
+	Hostname="DESKTOP-OIQC3FI"
+	OSRelease=" Professional"
+	OSVersion=" (Build 9200)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="34752"
+	TotalPhysicalMemory="32704"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="4008"
+	>
+	<Testing>
+		<StartDateTime>Mar 11 00:14 FLE Standard Time</StartDateTime>
+		<StartTestTime>1741644879</StartTestTime>
+		<TestList/>
+		<EndDateTime>Mar 11 00:14 FLE Standard Time</EndDateTime>
+		<EndTestTime>1741644879</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

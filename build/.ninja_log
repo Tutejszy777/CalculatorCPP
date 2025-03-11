@@ -1,0 +1,20 @@
+# ninja log v6
+56	3653	7633950871104206	CMakeFiles/Calculator.dir/main.cpp.obj	897fe029429b0ab5
+63	4633	7633950871164198	CMakeFiles/Calculator.dir/Input.cpp.obj	a743f413dc457b89
+103	4726	7633950871574181	CMakeFiles/run_test.dir/tree.cpp.obj	4f8135884707383e
+81	4947	7633950871394200	CMakeFiles/run_test.dir/Input.cpp.obj	718faaa72d1f999f
+52	5227	7633950871054203	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	79531a9466918e70
+68	5314	7633950871214194	CMakeFiles/Calculator.dir/tree.cpp.obj	a221dcb0e6914fd2
+5317	5745	7633950923704319	Calculator.exe	87acbc04188b6059
+91	5779	7633950871514201	CMakeFiles/run_test.dir/tree_test.cc.obj	4f185addecaca96a
+74	5858	7633950871284188	CMakeFiles/run_test.dir/input_test.cc.obj	3d01c2844c742d9d
+3666	7451	7633950907294308	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	a61aa3722a912fcd
+46	8310	7633950871004204	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	d4e37cb90f2390cd
+24	14518	7633950870770404	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	207fc48656720c7
+14521	14728	7633951015739578	lib/libgtest.a	8045f2bb5da57c0c
+14737	14889	7633951017908366	lib/libgtest_main.a	fd69eb299fb3d174
+14728	14910	7633951017818387	lib/libgmock.a	560be5f6be8d5315
+14910	15057	7633951019638420	lib/libgmock_main.a	1e96367e5b98e8c9
+14889	15489	7633951025348857	run_test.exe	ff98a16b85d43e7d
+14889	15489	7633951025348857	run_test[1]_tests.cmake	ff98a16b85d43e7d
+14889	15489	7633951025348857	C:/Users/Murav/Documents/GitHub/Calculator/build/run_test[1]_tests.cmake	ff98a16b85d43e7d
