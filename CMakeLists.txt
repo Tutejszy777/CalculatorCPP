@@ -20,7 +20,7 @@ include(CTest)
 enable_testing()
 
 add_executable(
-  input_test
+  run_test
   input_test.cc
   input.cpp
   tree_test.cc
@@ -28,9 +28,9 @@ add_executable(
 )
 
 target_link_libraries(
-  input_test
+  run_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(input_test)
+gtest_discover_tests(run_test)
