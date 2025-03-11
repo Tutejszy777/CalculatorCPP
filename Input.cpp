@@ -138,7 +138,7 @@ void Input::addParentheses(){
     
     expression = values.top();
     
-    spaceBetweenOperators();
+    spaceBetweenOperators(); // call to add spaces
 }
 
 

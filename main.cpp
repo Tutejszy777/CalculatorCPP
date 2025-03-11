@@ -11,7 +11,7 @@ bool validationOfInput(std::string a)
     for(int i = 0; i < a.length(); i++){
         if(isspace(a[i])) continue;
 
-        if( isdigit(a[i]) || a[i] == '.')
+        if( isdigit(a[i]) || a[i] == '.' && i < a.length())
         {
             while(isdigit(a[i]) || a[i] == '.'){
                 i++;
