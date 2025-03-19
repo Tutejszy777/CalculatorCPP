@@ -1,3 +1,0 @@
-"C:\DOWNLOADS EXTERNAL\mingw64\bin\cmake.exe" -E rm -f CMakeFiles\run_test.dir/objects.a
-C:\DOWNLO~1\mingw64\bin\llvm-ar.exe qc CMakeFiles\run_test.dir/objects.a @CMakeFiles\run_test.dir\objects1.rsp
-C:\DOWNLO~1\mingw64\bin\CLANG_~1.EXE -g -Wl,--whole-archive CMakeFiles\run_test.dir/objects.a -Wl,--no-whole-archive -o run_test.exe -Wl,--out-implib,librun_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\run_test.dir\linkLibs.rsp

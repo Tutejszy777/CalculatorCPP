@@ -1,3 +1,0 @@
-"C:\DOWNLOADS EXTERNAL\mingw64\bin\cmake.exe" -E rm -f CMakeFiles\Calculator.dir/objects.a
-C:\DOWNLO~1\mingw64\bin\llvm-ar.exe qc CMakeFiles\Calculator.dir/objects.a @CMakeFiles\Calculator.dir\objects1.rsp
-C:\DOWNLO~1\mingw64\bin\CLANG_~1.EXE -g -Wl,--whole-archive CMakeFiles\Calculator.dir/objects.a -Wl,--no-whole-archive -o Calculator.exe -Wl,--out-implib,libCalculator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Calculator.dir\linkLibs.rsp

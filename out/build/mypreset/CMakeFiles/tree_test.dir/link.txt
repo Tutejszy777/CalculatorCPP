@@ -1,2 +1,0 @@
-C:\DOWNLO~1\mingw64\bin\llvm-ar.exe qc libtree_test.a CMakeFiles/tree_test.dir/tree_test.cc.obj CMakeFiles/tree_test.dir/tree.cpp.obj
-C:\DOWNLO~1\mingw64\bin\LLVM-R~1.EXE libtree_test.a

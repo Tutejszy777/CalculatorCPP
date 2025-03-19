@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Murav/Documents/GitHub/Calculator/out/build/mypreset/input_test[1]_tests.cmake")
-  include("C:/Users/Murav/Documents/GitHub/Calculator/out/build/mypreset/input_test[1]_tests.cmake")
-else()
-  add_test(input_test_NOT_BUILT input_test_NOT_BUILT)
-endif()

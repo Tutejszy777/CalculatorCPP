@@ -77,6 +77,7 @@ build CMakeFiles/Calculator.dir/tree.cpp.obj: CXX_COMPILER__Calculator_unscanned
 # Link the executable Calculator.exe
 
 build Calculator.exe: CXX_EXECUTABLE_LINKER__Calculator_ CMakeFiles/Calculator.dir/main.cpp.obj CMakeFiles/Calculator.dir/Input.cpp.obj CMakeFiles/Calculator.dir/tree.cpp.obj
+  LINK_FLAGS = -static -static-libgcc -static-libstdc++
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Calculator.dir
   POST_BUILD = cd .
@@ -308,6 +309,7 @@ build CMakeFiles/run_test.dir/tree.cpp.obj: CXX_COMPILER__run_test_unscanned_ C$
 # Link the executable run_test.exe
 
 build run_test.exe run_test[1]_tests.cmake | ${cmake_ninja_workdir}run_test[1]_tests.cmake: CXX_EXECUTABLE_LINKER__run_test_ CMakeFiles/run_test.dir/input_test.cc.obj CMakeFiles/run_test.dir/Input.cpp.obj CMakeFiles/run_test.dir/tree_test.cc.obj CMakeFiles/run_test.dir/tree.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+  LINK_FLAGS = -static -static-libgcc -static-libstdc++
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\run_test.dir
   POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Murav\Documents\GitHub\Calculator\build && "C:\DOWNLOADS EXTERNAL\mingw64\bin\cmake.exe" -D TEST_TARGET=run_test -D TEST_EXECUTABLE=C:/Users/Murav/Documents/GitHub/Calculator/build/run_test.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/Murav/Documents/GitHub/Calculator/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=run_test_TESTS -D CTEST_FILE=C:/Users/Murav/Documents/GitHub/Calculator/build/run_test[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/DOWNLOADS EXTERNAL/mingw64/share/cmake-3.30/Modules/GoogleTestAddTests.cmake""

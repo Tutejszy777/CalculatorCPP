@@ -1,2 +1,0 @@
-C:\DOWNLO~1\mingw64\bin\llvm-ar.exe qc ..\..\..\lib\libgmock.a "CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
-C:\DOWNLO~1\mingw64\bin\LLVM-R~1.EXE ..\..\..\lib\libgmock.a
